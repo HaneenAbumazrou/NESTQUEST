@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
   
             // Send POST request to server to add the booking
-            fetch("http://localhost:3000/bookings", {
+            fetch("http://localhost:3002/bookings", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

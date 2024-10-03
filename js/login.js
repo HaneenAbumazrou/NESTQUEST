@@ -67,7 +67,7 @@ signin = () => {
     // Check if user exists and password matches
     if (storedUser && storedUser.username === username && storedUser.password === password) {
         // Successful login, redirect to another page
-        window.location.href = 'home.html'; // Replace 'home.html' with your desired page
+        window.location.href = 'index.html'; // Replace 'home.html' with your desired page
     } else {
         // Invalid credentials, show error message
         alert('Invalid username or password');

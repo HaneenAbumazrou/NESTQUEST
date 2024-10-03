@@ -107,6 +107,13 @@
       "price": "600.00",
       "hotelName": "fdsaf",
       "photo": "img/holeday/sharm-el-sheikh.jpg"
+    },
+    {
+      "id": "toga1",
+      "country": "Sharm El Sheikh",
+      "price": "400.00",
+      "hotelName": "dsadsad",
+      "photo": "img/holeday/sharm-el-sheikh.jpg"
     }
   ]
 }

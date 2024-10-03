@@ -27,7 +27,12 @@ fetch('http://localhost:3000/hotels')
                         </div>
                         <div class="details">
                             <h4>${hotel.name}</h4>
-                            <p>${hotel.reviews} Reviews</p>
+                            <p>SwimmingPool:    ${hotel.swimming_pool}<p>
+                            <p>gymnasium:       ${hotel.gymnasium}<p>
+                            <p>wi_fi:           ${hotel.wi_fi}<p>
+                            <p>room_service:    ${hotel.room_service}<p>
+                             <p>air_condition:  ${hotel.air_condition}<p>
+                            <p>restaurant:      ${hotel.restaurant}<p>
                             <button onclick="bookHotel(${hotel.id}, '${hotel.name}', ${hotel.price_per_night})" class="btn yellow-btn m-auto d-flex">Book Now</button>
                         </div>
                     </div>
@@ -56,11 +61,21 @@ async function confirmBooking(hotelId) {
     const creditCard = document.getElementById('creditCard').value;
     const cvv = document.getElementById('cvv').value;
 
+
     // Validation Functions
     function isValidCreditCard(cardNumber) {
         const regex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12}|2(?:22|7[0-9]|8[0-9])\d{12})$/;
         return regex.test(cardNumber);
     }
+    function validateName(fullName) {
+        const nameRegex = /^[A-Za-z\s]+$/; // Allows only letters and spaces
+        return nameRegex.test(fullName.trim());
+    }
+    if (!validateName(fullName)) {
+        alert('Please enter a valid name (letters and spaces only).');
+        return;
+    }
+
 
     function isValidCVV(cvv) {
         return /^\d{3,4}$/.test(cvv);
@@ -91,21 +106,11 @@ async function confirmBooking(hotelId) {
         alert('This Room Is Booked on this day, please choose another day');
         return;
     }
-
-    // Maximum Booking Check
-    hotelBookings[hotelId] = hotelBookings[hotelId] || 0; // Initialize if it doesn't exist
-    if (hotelBookings[hotelId] >= 10) {
-        alert('This hotel is fully booked. Please look for other hotels.');
-        return;
-    }
-
+    
     // Prepare and Send Booking Data
     const bookingData = {
         hotelId, startDate, returnDate, numAdults, numChildren, fullName, creditCard, cvv
     };
-    
-    hotelBookings[hotelId]++;
-
     fetch('http://localhost:3000/bookings', {
         method: 'POST',
         headers: {
@@ -122,7 +127,6 @@ async function confirmBooking(hotelId) {
     })
     .catch(error => console.error('Error:', error));
 }
-
 // 6. Set Minimum Date on Load
 window.onload = () => {
     const today = new Date().toISOString().split('T')[0];

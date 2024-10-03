@@ -2547,8 +2547,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-left .primary-btn:hover {
-  background: #222;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 @media (max-width: 767px) {
@@ -3188,6 +3188,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 .destinations-area .single-destinations .details {
   background: #fff;
   padding: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .destinations-area .single-destinations .details h4 {

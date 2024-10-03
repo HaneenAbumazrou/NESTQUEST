@@ -51,7 +51,7 @@ async function handleBookingSubmit(event) {
 
     try {
         // جلب الحجوزات الحالية من الخادم
-        const response = await fetch('http://localhost:3000/booking'); // إرسال طلب لجلب الحجوزات الحالية
+        const response = await fetch('http://localhost:3001/booking'); // إرسال طلب لجلب الحجوزات الحالية
         const existingBookings = await response.json(); // تحويل استجابة الخادم إلى كائن JSON
 
         // التحقق مما إذا كان هناك حجز بنفس الوجهة واسم الفندق
@@ -67,7 +67,7 @@ async function handleBookingSubmit(event) {
         }
 
         // إذا لم يكن هناك تعارض، متابعة حفظ بيانات الحجز
-        const saveResponse = await fetch('http://localhost:3000/booking', {
+        const saveResponse = await fetch('http://localhost:3001/booking', {
             method: 'POST', //post call 
             headers: {
                 'Content-Type': 'application/json' // تحديد نوع المحتوى كـ JSON
