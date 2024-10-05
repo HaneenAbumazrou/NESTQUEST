@@ -4526,3 +4526,70 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #ff0000;
   border: 1px solid #ff0000;
 }
+.about-us {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f7f7f7;
+}
+
+.about-us h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team-member h4 {
+  font-size: 20px;
+  color: #f8b600;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  font-size: 18px;
+  color: #555;
+}
+
+.team-member i {
+  color: #0077b5; /* LinkedIn blue color */
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .team-list {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+.team-member i:hover 
+{
+  background-color: white;
+  color: #f8b600;
+}
