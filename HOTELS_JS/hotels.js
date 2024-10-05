@@ -16,7 +16,8 @@ function isDateAvailable(hotelId, date) {
 
 // 3. Fetching Hotels and Displaying Them
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("json/hotels.json")
+    fetch("https://raw.githubusercontent.com/mohammadnoorsaqer/NESTQUEST/main/json/hotels.json")
+
         .then(response => response.json())
         .then(data => {
             console.log(data); 
