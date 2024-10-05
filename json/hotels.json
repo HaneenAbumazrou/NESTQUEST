@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Hilton Star Hotel",
-      "image": "/img/hotels/d1.jpg",
+      "image": "img/hotels/d1.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "not available",
@@ -16,7 +16,7 @@
     {
       "id": "2",
       "name": "Mountain View Lodge",
-      "image": "/img/hotels/d2.jpg",
+      "image": "img/hotels/d2.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "not available",
@@ -29,7 +29,7 @@
     {
       "id": "3",
       "name": "Urban Oasis Suites",
-      "image": "/img/hotels/d3.jpg",
+      "image": "img/hotels/d3.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "available",
@@ -42,7 +42,7 @@
     {
       "id": "4",
       "name": "Rustic Retreat Hotel",
-      "image": "/img/hotels/d4.jpg",
+      "image": "img/hotels/d4.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "available",
@@ -55,7 +55,7 @@
     {
       "id": "5",
       "name": "Elegant Escapes Resorts",
-      "image": "/img/hotels/d5.jpg",
+      "image": "img/hotels/d5.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "not available",
@@ -68,7 +68,7 @@
     {
       "id": "6",
       "name": "Sunny Sands Hotel",
-      "image": "/img/hotels/d6.jpg",
+      "image": "img/hotels/d6.jpg",
       "reviews": 49,
       "swimming_pool": "available",
       "gymnasium": "available",
