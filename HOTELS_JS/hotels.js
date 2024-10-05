@@ -16,7 +16,7 @@ function isDateAvailable(hotelId, date) {
 
 // 3. Fetching Hotels and Displaying Them
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("https://raw.githubusercontent.com/mohammadnoorsaqer/NESTQUEST/main/json/hotels.json")
+    fetch("https://raw.githubusercontent.com/mohammadnoorsaqer/NESTQUEST/refs/heads/main/json/hotels.json")
         .then(response => response.json())
         .then(data => {
             console.log(data); 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         })
         .catch(error => console.error('Error fetching data:', error));
-});
+});;
 
 // 4. Booking Management
 const hotelBookings = {};
