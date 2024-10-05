@@ -34,7 +34,7 @@
       "swimming_pool": "available",
       "gymnasium": "available",
       "wi_fi": "available",
-      "room_service": false,
+      "room_service": "not available",
       "air_condition": "available",
       "restaurant": "available",
       "price_per_night": 1600

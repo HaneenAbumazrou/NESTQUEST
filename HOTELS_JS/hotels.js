@@ -15,31 +15,36 @@ function isDateAvailable(hotelId, date) {
 }
 
 // 3. Fetching Hotels and Displaying Them
-fetch('http://localhost:3000/hotels')
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(hotel => {
-            const hotelCard = `
-                <div class="col-lg-4">
-                    <div class="single-destinations">
-                        <div class="thumb">
-                            <img src="${hotel.image}" alt="${hotel.name}">
+document.addEventListener('DOMContentLoaded', () => {
+    fetch("http://127.0.0.1:5500/json/hotels.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); 
+            const hotels = data.hotels; 
+            hotels.forEach(hotel => {
+                const hotelCard = `
+                    <div class="col-lg-4">
+                        <div class="single-destinations">
+                            <div class="thumb">
+                                <img src="${hotel.image}" alt="${hotel.name}">
+                            </div>
+                            <div class="details">
+                                <h4>${hotel.name}</h4>
+                                <p>Swimming Pool: ${hotel.swimming_pool}</p>
+                                <p>Gymnasium: ${hotel.gymnasium}</p>
+                                <p>Wi-Fi: ${hotel.wi_fi}</p>
+                                <p>Room Service: ${hotel.room_service}</p>
+                                <p>Air Condition: ${hotel.air_condition}</p>
+                                <p>Restaurant: ${hotel.restaurant}</p>
+                                <button onclick="bookHotel(${hotel.id}, '${hotel.name}', ${hotel.price_per_night})" class="btn yellow-btn m-auto d-flex">Book Now</button>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h4>${hotel.name}</h4>
-                            <p>SwimmingPool:    ${hotel.swimming_pool}<p>
-                            <p>gymnasium:       ${hotel.gymnasium}<p>
-                            <p>wi_fi:           ${hotel.wi_fi}<p>
-                            <p>room_service:    ${hotel.room_service}<p>
-                             <p>air_condition:  ${hotel.air_condition}<p>
-                            <p>restaurant:      ${hotel.restaurant}<p>
-                            <button onclick="bookHotel(${hotel.id}, '${hotel.name}', ${hotel.price_per_night})" class="btn yellow-btn m-auto d-flex">Book Now</button>
-                        </div>
-                    </div>
-                </div>`;
-            document.getElementById('hotel-container').innerHTML += hotelCard;
-        });
-    });
+                    </div>`;
+                document.getElementById('hotel-container').innerHTML += hotelCard;
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});
 
 // 4. Booking Management
 const hotelBookings = {};
