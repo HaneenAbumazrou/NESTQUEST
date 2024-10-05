@@ -16,7 +16,7 @@ function isDateAvailable(hotelId, date) {
 
 // 3. Fetching Hotels and Displaying Them
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("http://127.0.0.1:5500/json/hotels.json")
+    fetch("json/hotels.json")
         .then(response => response.json())
         .then(data => {
             console.log(data); 
